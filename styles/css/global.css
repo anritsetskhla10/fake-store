@@ -1,0 +1,285 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  text-decoration: none;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+  font-family: "Work Sans", sans-serif;
+  background-color: #f7f7f7;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+button {
+  cursor: pointer;
+}
+
+@font-face {
+  font-family: "dana-Bold";
+  src: url("../../fonts/dana bold.ttf");
+}
+@font-face {
+  font-family: "dana-Medium";
+  src: url("../../fonts/dana medium.ttf");
+}
+@font-face {
+  font-family: "dana-Regular";
+  src: url("../../fonts/dana regular.ttf");
+}
+@font-face {
+  font-family: "dana-Thin";
+  src: url("../../fonts/dana thin.ttf");
+}
+html {
+  font-size: 10px;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #fffdfd;
+  display: flex;
+  flex-direction: row;
+  justify-content: normal;
+  align-items: center;
+}
+
+@media only screen and (min-width: 300px) {
+  header {
+    width: 100%;
+    background-color: #F3DCEC;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem 2.4rem;
+    position: relative;
+  }
+  header .logo {
+    width: 50px;
+    height: 50px;
+  }
+  header #menu {
+    width: 40px;
+    height: 40px;
+  }
+  header nav {
+    display: none;
+  }
+  header .navActive {
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #808B96;
+    padding: 8rem 7rem;
+    border-radius: 1.5rem;
+  }
+  header .navActive ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+  }
+  header .navActive a {
+    color: #3a3134;
+    font-family: "dana-Medium";
+    font-size: 1.7rem;
+    font-weight: 500;
+    line-height: normal;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+}
+@media only screen and (min-width: 768px) {
+  header {
+    padding: 5rem 10rem;
+  }
+  header .logo {
+    width: 75px;
+    height: 75px;
+  }
+  header #menu {
+    display: none;
+  }
+  header nav {
+    display: block;
+  }
+  header ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+  }
+  header ul a {
+    color: #3a3134;
+    font-family: "dana-Medium";
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: normal;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  header {
+    padding: 6rem 15rem;
+  }
+  header .logo {
+    width: 100px;
+    height: 100px;
+  }
+  header nav {
+    display: block;
+  }
+  header ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+  header ul a {
+    color: #3a3134;
+    font-family: "dana-Medium";
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: normal;
+  }
+}/*# sourceMappingURL=global.css.map */

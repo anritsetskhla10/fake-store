@@ -1,0 +1,9 @@
+html {
+    font-size: $base-font-size;
+}
+
+body{
+    overflow-x: hidden;
+    background-color: $main-bg-color;
+    @include flex($justify: normal , $align:center )
+}

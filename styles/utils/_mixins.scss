@@ -1,0 +1,40 @@
+
+
+@mixin flex($justify: center, $align: center, $direct: row ) {
+    display: flex;
+    flex-direction: $direct;
+    justify-content: $justify;
+    align-items: $align;
+}
+  
+@mixin text_font_style($fc, $ff, $fs, $fw) {
+    color: $fc;
+    font-family: $ff;
+    font-size: $fs;
+    font-weight: $fw;
+    line-height: normal;
+  }
+
+
+// For Response
+
+$pc: 1440px; 
+$tablet: 768px; 
+$phone: 300px; 
+
+
+@mixin responsive($media) {
+  @if $media == $pc {
+    @media only screen and (min-width: $pc) {
+      @content;
+    }
+  } @else if $media == $tablet {
+    @media only screen and (min-width: $tablet) {
+      @content;
+    }
+  } @else if $media == $phone {
+    @media only screen and (min-width: $phone) {
+      @content;
+    }
+  }
+}
