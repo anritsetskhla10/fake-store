@@ -1,5 +1,81 @@
 
 
 @include responsive($phone){
+    main{
+        padding: 3rem 0;
+
+        .card-section{
+            @include flex(center, center);
+            flex-direction: column;
+            gap:3rem;
+        }
+
+        .card{
+            width: 350px;
+            border: 2px solid #341818;
+
+            @include flex(center, center);
+            flex-direction:column;
+            gap: 1rem;
+            padding: 1rem 1.5rem;
+
+            .img{
+                width: 250px;
+            }
+
+            .title{
+                @include text_font_style($text-color, $dana-Bold-ff, 2.5rem ,$Black-w8);
+                text-align: center;
+            }
+
+            .description{
+                @include text_font_style($text-color, $dana-Medium-ff, 2rem ,$medium-w5)
+            }
+
+            .rating{
+                width: 100%;
+                padding: 0 2rem;
+                
+                @include flex(space-between, center);
+
+                .rate-container{
+                    width: 40%;
+                    @include flex(space-between, flex-start);
+
+                    img{
+                        width: 2rem;
+                    }
+                }
+            }
+
+            .price, 
+            .category, 
+            .rate, 
+            .count{
+                @include text_font_style($text-color, $dana-Regular-ff, 1.8rem ,$regular-w4)
+            }
+
+            .category{
+                align-self: start;
+                padding-left: 2rem;
+            }
+        }
+    }
+}
+
+@include responsive($tablet){
+    main{
+
+        .card-section{
+            display: grid;
+            align-items: normal;
+            grid-template-columns: 350px 300px;
+            gap: 10px;
+        }
     
+        .img{
+            width: 300px;
+        }
+    }
+
 }

@@ -3,7 +3,8 @@
     header{    
         width: 100%;
         background-color: $header-bg-color;
-        @include flex($justify:space-between, $align: center);
+        @include flex(space-between,  center);
+        flex-direction: row;
         padding: 3rem 2.4rem;
         position: relative;
     
@@ -32,12 +33,13 @@
             border-radius: 1.5rem;
 
             ul{
-                @include flex($justify:center, $align:center, $direct:column);
+                @include flex(center, center );
+                flex-direction: column;
                 gap:40px;
             }
 
             a{
-                @include text_font_style($text-color, $dana-Medium-ff, $link-fs,$medium-w5);
+                @include text_font_style($text-color, $dana-Bold-ff, $link-fs, $Bold-w6);
                 white-space: nowrap;
                 cursor: pointer;
             }
@@ -64,8 +66,9 @@
         } 
 
         ul{
-            @include flex($justify:space-between, $align:center);
-            gap: 25px;
+            @include flex(space-between, center);
+            flex-direction: row;
+            gap: 30px;
 
             a{
                 @include text_font_style($text-color, $dana-Medium-ff, 2.5rem ,$medium-w5);
@@ -93,11 +96,12 @@
         } 
 
         ul{
-            @include flex($justify:space-between, $align:center);
+            @include flex(space-between, center);
+            flex-direction: row;
             gap: 40px;
 
             a{
-                @include text_font_style($text-color, $dana-Medium-ff, 4rem ,$medium-w5);
+                @include text_font_style($text-color, $dana-Bold-ff, 4rem ,$Bold-w6);
             }
         }
     

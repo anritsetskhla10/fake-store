@@ -5,5 +5,6 @@ html {
 body{
     overflow-x: hidden;
     background-color: $main-bg-color;
-    @include flex($justify: normal , $align:center )
+    @include flex( normal, center);
+    flex-direction:column;
 }
