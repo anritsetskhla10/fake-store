@@ -5,23 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
     <link rel="stylesheet" href="./styles/css/global.css">
-    <script src="./js/script.js" defer></script>
+    <script type="module" src="./js/script.js" defer></script>
     <title>Fake Store</title>
 </head>
 <body>
 
     <header>
-        <img class="logo" src="./images/logo.png" alt="logo icon">
         <img id="menu" src="./images/burger-menu-svgrepo-com.svg" alt="menu icon">
+        <img class="logo" src="./images/logo.png" alt="logo icon">
         <nav >
             <ul>
-                <li><a href="#">Home</a></li>
+                <li><a href="./index.html">Home</a></li>
                 <li><a href="#">Products</a></li>
-                <li><a href="#">Cart</a></li>
-                <li><a href="#">About us</a></li>
                 <li><a href="#">Contact</a></li>
+                <li><a href="#">About us</a></li>
             </ul>
         </nav>
+        <div id="cart-container">
+                <img id="cart" src="./images/cart.svg" alt="cart icon">
+            <h3 id="cardcount">0</h3>
+        </div>
+        <div id="cart-popup">
+            <div class="popup-header">
+                <h4>cart</h4>
+                <button>Remove all</button>
+            </div>
+            <div class="cart-item">
+                <div class="card-info">
+                    <img src="" alt="">
+                    <div>
+                        <h5>saxeli</h5>
+                        <span>fasi</span>
+                    </div>
+                </div>
+                <div>
+                    <span>0</span>
+                    <button>remove</button>
+                </div>
+            </div>
+        </div>
     </header>
     <main>
         
@@ -39,6 +61,7 @@
                     </div>
                     <span class="count"></span>
                 </div>
+
                 <button>add to cart</button>
             </div> -->
         </section>

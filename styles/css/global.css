@@ -170,7 +170,7 @@ html {
 
 body {
   overflow-x: hidden;
-  background-color: #fffdfd;
+  background-color: #F3DCEC;
   display: flex;
   justify-content: normal;
   align-items: center;
@@ -180,7 +180,7 @@ body {
 @media only screen and (min-width: 300px) {
   header {
     width: 100%;
-    background-color: #F3DCEC;
+    background-color: #101010;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -195,18 +195,24 @@ body {
   header #menu {
     width: 40px;
     height: 40px;
+    filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(6%) hue-rotate(334deg) brightness(101%) contrast(103%);
   }
   header nav {
     display: none;
   }
+  header #cart {
+    width: 23px;
+    height: 20px;
+  }
   header .navActive {
+    width: 32.7rem;
     display: block;
     position: absolute;
     top: 100%;
     left: 50%;
     transform: translate(-50%, 0);
-    background-color: #808B96;
-    padding: 8rem 7rem;
+    background-color: #9d6d95;
+    padding: 8rem 0;
     border-radius: 1.5rem;
   }
   header .navActive ul {
@@ -217,7 +223,7 @@ body {
     gap: 40px;
   }
   header .navActive a {
-    color: #3a3134;
+    color: #fff;
     font-family: "dana-Bold";
     font-size: 2rem;
     font-weight: 600;
@@ -225,8 +231,59 @@ body {
     white-space: nowrap;
     cursor: pointer;
   }
+  header #cart-container {
+    gap: 1rem;
+    position: relative;
+  }
+  header #cart-container h3 {
+    color: #FF0000;
+    font-family: "dana-Bold";
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: normal;
+    position: absolute;
+    top: -2rem;
+    right: -1rem;
+  }
+  header #cart-popup {
+    width: 32.7rem;
+    display: block;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: #9d6d95;
+    border-radius: 1.5rem;
+  }
+  header #cart-popup .popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 1rem;
+  }
+  header #cart-popup .popup-header h4 {
+    color: #0e0909;
+    font-family: "dana-Medium";
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: normal;
+  }
+  header #cart-popup .popup-header button {
+    background-color: transparent;
+    border: none;
+    color: #000;
+    font-family: "dana-Medium";
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: normal;
+  }
+  header #cart-popup .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 300px) and (min-width: 768px) {
   header {
     padding: 5rem 10rem;
   }
@@ -248,7 +305,7 @@ body {
     gap: 30px;
   }
   header ul a {
-    color: #3a3134;
+    color: #fff;
     font-family: "dana-Medium";
     font-size: 2.5rem;
     font-weight: 500;
@@ -257,7 +314,7 @@ body {
     cursor: pointer;
   }
 }
-@media only screen and (min-width: 1440px) {
+@media only screen and (min-width: 300px) and (min-width: 1440px) {
   header {
     padding: 6rem 15rem;
   }
@@ -276,7 +333,7 @@ body {
     gap: 40px;
   }
   header ul a {
-    color: #3a3134;
+    color: #fff;
     font-family: "dana-Bold";
     font-size: 4rem;
     font-weight: 600;
@@ -285,7 +342,7 @@ body {
 }
 @media only screen and (min-width: 300px) {
   main {
-    padding: 3rem 0;
+    padding: 16rem 0;
   }
   main .card-section {
     display: flex;
@@ -305,10 +362,10 @@ body {
     padding: 1rem 1.5rem;
   }
   main .card .img {
-    width: 250px;
+    width: 327px;
   }
   main .card .title {
-    color: #3a3134;
+    color: #0e0909;
     font-family: "dana-Bold";
     font-size: 2.5rem;
     font-weight: 800;
@@ -316,7 +373,7 @@ body {
     text-align: center;
   }
   main .card .description {
-    color: #3a3134;
+    color: #0e0909;
     font-family: "dana-Medium";
     font-size: 2rem;
     font-weight: 500;
@@ -326,23 +383,19 @@ body {
     width: 100%;
     padding: 0 2rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: start;
     align-items: center;
   }
-  main .card .rating .rate-container {
-    width: 40%;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-  }
-  main .card .rating .rate-container img {
+  main .card .rating img {
     width: 2rem;
+    padding: 0 0 0.8rem;
+    margin-left: 1rem;
   }
   main .card .price,
   main .card .category,
   main .card .rate,
   main .card .count {
-    color: #3a3134;
+    color: #0e0909;
     font-family: "dana-Regular";
     font-size: 1.8rem;
     font-weight: 400;

@@ -16,20 +16,28 @@
         #menu{
             width: 40px;
             height: 40px;
+            filter: brightness(0) saturate(100%) invert(99%) sepia(1%) saturate(6%) hue-rotate(334deg) brightness(101%) contrast(103%);
         }
 
         nav{
             display: none;
         }
 
+        #cart{
+            width: 23px;
+            height: 20px;
+        }
+
+
         .navActive{
+            width: 32.7rem;
             display: block;
             position: absolute;
             top: 100%;
             left: 50%;
             transform: translate(-50%, 0);
             background-color:$nav-bg-color;
-            padding: 8rem 7rem;
+            padding: 8rem 0;
             border-radius: 1.5rem;
 
             ul{
@@ -38,12 +46,53 @@
                 gap:40px;
             }
 
-            a{
-                @include text_font_style($text-color, $dana-Bold-ff, $link-fs, $Bold-w6);
-                white-space: nowrap;
-                cursor: pointer;
+                a{  
+                    @include text_font_style($text-color, $dana-Bold-ff, $link-fs, $Bold-w6);
+                    white-space: nowrap;
+                    cursor: pointer;
+                }
             }
-        }
+
+            #cart-container{
+                gap: 1rem;
+                position: relative;
+                h3{
+                    @include text_font_style($cart-text-item, $dana-Bold-ff, $link-fs, $Bold-w6);
+                    position: absolute;
+                    top: -2rem;
+                    right: -1rem;
+                }
+            }
+
+            #cart-popup{
+                width: 32.7rem;
+                display: block;
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translate(-50%, 0);
+                background-color:$nav-bg-color;
+                border-radius: 1.5rem;
+
+                .popup-header{
+                    @include flex(space-between, center);
+                    padding: 1.5rem 1rem;
+                    
+                    h4{
+                        @include text_font_style($title-text, $dana-Medium-ff, $popup-title, $medium-w5);
+                    }
+                    
+                    button{
+                        background-color: transparent;
+                        border: none;
+                        @include text_font_style($button-text, $dana-Medium-ff, $popup-title, $medium-w5);
+
+                    }
+                }
+
+                .cart-item{
+                    @include flex(space-between, center);
+                }
     }
 }
 
@@ -105,5 +154,6 @@
             }
         }
     
+        }
     }
 }
