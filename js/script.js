@@ -36,16 +36,27 @@ const addToCart = (item) => {
 };
 
 // Update cart
-const cartPopup = document.getElementById('cart-popup');
+
+const popupCount = document.querySelector('.popup-count');
+
+const itemDiv = document.getElementById('cart-item');
 
 const updateCart = () => {
-  
-  cart.forEach((item, index) => {
-    const itemDiv = document.createElement('div');
-    itemDiv.classList.add('cart-item');
+  itemDiv.innerHTML = '';
 
+  cart.forEach((item, index) => {
+
+    const card = document.createElement('div');
+    card.classList.add('card');
+    
     const cardInfo = document.createElement('div');
     cardInfo.classList.add('card-info');
+
+    const cardQuantity = document.createElement('div');
+    cardQuantity.classList.add('quantity');
+    
+    const itemInfo = document.createElement('div');
+    itemInfo.classList.add('item-info');
     
     const image = document.createElement('img');
     image.classList.add("img");
@@ -56,20 +67,28 @@ const updateCart = () => {
     
     const cartPrice = document.createElement('span');
     cartPrice.textContent = `$${item.price}`;
+
+    const itemCount = document.createElement('span');
+    itemCount.textContent = `1`;
     
     const removeButton = document.createElement('button');
     removeButton.textContent = 'Remove';
     removeButton.addEventListener('click', () => {
       removeFromCart(index); 
-      cartPopup.removeChild(itemDiv); 
+      card.remove(); 
     });
 
-    itemDiv.append(image, cartTitle, cartPrice, removeButton);
-    cartPopup.appendChild(itemDiv);
+    itemInfo.append(cartTitle, cartPrice)
+    cardInfo.append(image, itemInfo)
+    cardQuantity.append(itemCount,removeButton)
+    card.append(cardInfo, cardQuantity);
+    itemDiv.append(card);
+    
   });
 
   cardCount.textContent = cart.length;
-  console.log(cart);
+  popupCount.textContent = `Cart (${cart.length})`
+
 };
 
 // Remove item from cart

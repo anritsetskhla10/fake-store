@@ -68,15 +68,16 @@
                 width: 32.7rem;
                 display: block;
                 position: absolute;
-                top: 100%;
+                top: 110%;
                 left: 50%;
                 transform: translate(-50%, 0);
-                background-color:$nav-bg-color;
+                background-color: $main-bg-color;
                 border-radius: 1.5rem;
+                padding: 1.5rem 1rem;
+                border: 2px solid black;
 
                 .popup-header{
                     @include flex(space-between, center);
-                    padding: 1.5rem 1rem;
                     
                     h4{
                         @include text_font_style($title-text, $dana-Medium-ff, $popup-title, $medium-w5);
@@ -90,10 +91,84 @@
                     }
                 }
 
-                .cart-item{
+                #cart-item{
+                    width: 100%;
                     @include flex(space-between, center);
+                    flex-direction: column;
+                    gap: 1rem;
+
+                    .card{
+                        width: 100%;
+                        @include flex(space-between, center);
+                    }
+
+                    .card-info{
+                        @include flex(space-between, center);
+                        gap: 2rem;
+                        img{
+                            width: 70px;
+                            height: 80px
+
+                        }
+                        .item-info{
+                            @include flex(normal, start);
+                            flex-direction: column;
+                            gap: 1rem;
+                            h5{ 
+                               width: 7rem;
+                                @include text_font_style($title-text, $dana-Regular-ff, $cart-fs, $regular-w4);
+                                text-align: left;
+                            }
+
+                            span{
+                                @include text_font_style($title-text, $dana-Regular-ff, $cart-fs, $regular-w4);
+                            }
+                        }
+                    }
+                    
+                    .quantity{
+                        @include flex(space-between, center);
+                        gap: 1rem;
+
+                        span{
+                            @include text_font_style($title-text, $dana-Regular-ff, $cart-fs, $regular-w4);
+                        }
+
+                        button{
+                            @include text_font_style($button-text, $dana-Regular-ff, $cart-fs, $regular-w4);
+                            background-color: $bg-button;
+                            border: none;
+                            padding: 0.7rem 1rem;
+                            border-radius: 0.8rem;
+                        }
+
+                    }
+
+
                 }
-    }
+                .checkout-container{
+                    @include flex(normal, center);
+                    flex-direction: column;
+                    gap: 2.4rem;
+                    margin-top: 3rem;
+
+                    .total-container{
+                        width: 100%;
+                        @include flex(space-between, center);
+
+                        span{
+                            @include text_font_style($title-text, $dana-Bold-ff, $popup-title, $Bold-w6);
+                        }
+                    }
+
+                    button{
+                        @include text_font_style($title-text, $dana-Medium-ff, $popup-title, $medium-w5);
+                        background-color: $bg-btn-check;
+                        border: none;
+                        padding: 1rem 5.2rem;
+                    }
+                }
+            }
 }
 
 
