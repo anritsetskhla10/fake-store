@@ -2,7 +2,7 @@
 
 @include responsive($phone){
     main{
-        padding: 16rem 0;
+        padding: 10rem 0;
 
         .card-section{
             @include flex(center, center);
@@ -24,12 +24,12 @@
             }
 
             .title{
-                @include text_font_style($title-text, $dana-Bold-ff, 2.5rem ,$Black-w8);
+                @include text_font_style($title-text, $fontFamily, 2.5rem ,$Black-w8);
                 text-align: center;
             }
 
             .description{
-                @include text_font_style($title-text, $dana-Medium-ff, 2rem ,$medium-w5)
+                @include text_font_style($title-text, $fontFamily, 2rem ,$medium-w5)
             }
 
             .rating{
@@ -49,7 +49,7 @@
             .category, 
             .rate, 
             .count{
-                @include text_font_style($title-text, $dana-Regular-ff, 1.8rem ,$regular-w4)
+                @include text_font_style($title-text, $fontFamily, 1.8rem ,$regular-w4)
             }
 
             .category{
@@ -66,7 +66,7 @@
         .card-section{
             display: grid;
             align-items: normal;
-            grid-template-columns: 350px 300px;
+            grid-template-columns: 350px 350px;
             gap: 10px;
         }
     

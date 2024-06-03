@@ -10,5 +10,10 @@ const loadCartFromLocalStorage = () => {
 
   const cart = loadCartFromLocalStorage();
   
+  console.log(cart)
 
-console.log(cart)
+  const cards = document.querySelector('.cards')
+ 
+
+ 
+

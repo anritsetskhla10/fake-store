@@ -1,13 +1,26 @@
 // Menu functionality
-
 const menu = document.getElementById('menu');
-const nav = Array.from(document.getElementsByTagName('nav'))[0];
+const nav = document.querySelector('nav');
 
 menu.addEventListener('click', () => {
-  if (!nav.classList.contains('navActive')) {
+  if (!nav.classList.contains('navActive') || !cartPopUp.classList.contains('inactive')) {
     nav.classList.add('navActive');
+    cartPopUp.classList.add('inactive');
   } else {
     nav.classList.remove('navActive');
+  }
+});
+
+// Cart popup
+const cartContainer = document.getElementById('cart-container');
+const cartPopUp = document.querySelector('.cart-popup');
+
+cartContainer.addEventListener('click', () => {
+  if (cartPopUp.classList.contains('inactive') || nav.classList.contains('navActive')) {
+    cartPopUp.classList.remove('inactive');
+    nav.classList.remove('navActive');
+  } else {
+    cartPopUp.classList.add('inactive');
   }
 });
 
@@ -30,22 +43,25 @@ const loadCartFromLocalStorage = () => {
 
 // Add item to cart
 const addToCart = (item) => {
-  cart.push(item);
+  const existingItemIndex = cart.findIndex(cartItem => cartItem.id === item.id);
+  if (existingItemIndex !== -1) {
+    cart[existingItemIndex].quantity += 1;
+  } else {
+    item.quantity = 1;
+    cart.push(item);
+  }
   saveCartToLocalStorage();
   updateCart();
 };
 
 // Update cart
-
 const popupCount = document.querySelector('.popup-count');
-
 const itemDiv = document.getElementById('cart-item');
 
-const updateCart = () => {
+export const updateCart = () => {
   itemDiv.innerHTML = '';
 
   cart.forEach((item, index) => {
-
     const card = document.createElement('div');
     card.classList.add('card');
     
@@ -59,7 +75,7 @@ const updateCart = () => {
     itemInfo.classList.add('item-info');
     
     const image = document.createElement('img');
-    image.classList.add("img");
+    image.classList.add('img');
     image.src = item.image;
 
     const cartTitle = document.createElement('h5');
@@ -69,31 +85,33 @@ const updateCart = () => {
     cartPrice.textContent = `$${item.price}`;
 
     const itemCount = document.createElement('span');
-    itemCount.textContent = `1`;
+    itemCount.textContent = `${item.quantity}`;
     
     const removeButton = document.createElement('button');
     removeButton.textContent = 'Remove';
     removeButton.addEventListener('click', () => {
-      removeFromCart(index); 
-      card.remove(); 
+      removeFromCart(index);
     });
 
-    itemInfo.append(cartTitle, cartPrice)
-    cardInfo.append(image, itemInfo)
-    cardQuantity.append(itemCount,removeButton)
+    itemInfo.append(cartTitle, cartPrice);
+    cardInfo.append(image, itemInfo);
+    cardQuantity.append(itemCount, removeButton);
     card.append(cardInfo, cardQuantity);
     itemDiv.append(card);
-    
   });
 
-  cardCount.textContent = cart.length;
-  popupCount.textContent = `Cart (${cart.length})`
-
+  const totalQuantity = cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
+  cardCount.textContent = totalQuantity;
+  popupCount.textContent = `Cart (${totalQuantity})`;
 };
 
 // Remove item from cart
 const removeFromCart = (index) => {
-  cart.splice(index, 1);
+  if (cart[index].quantity > 1) {
+    cart[index].quantity -= 1;
+  } else {
+    cart.splice(index, 1);
+  }
   saveCartToLocalStorage();
   updateCart();
 };
@@ -109,14 +127,14 @@ const getdata = async () => {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
     const data = await response.json();
-    const cardContainer = Array.from(document.getElementsByClassName('card-section'))[0];
-
+    const cardContainer = document.querySelector('.card-section');
+    
     data.forEach((item) => {
       const card = document.createElement('div');
       card.classList.add('card');
 
       const image = document.createElement('img');
-      image.classList.add("img");
+      image.classList.add('img');
       image.src = item.image;
 
       const title = document.createElement('h2');

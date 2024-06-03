@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="./images/logo.png" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Georgian:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/css/global.css">
     <script type="module" src="./js/script.js" defer></script>
-    <title>Fake Store</title>
+
+    <title>STORE</title>
 </head>
 <body>
 
@@ -25,7 +29,7 @@
                 <img id="cart" src="./images/cart.svg" alt="cart icon">
             <h3 id="cardcount">0</h3>
         </div>
-        <div id="cart-popup">
+        <div class="cart-popup inactive" >
             <div class="popup-header">
                 <h4 class="popup-count">cart</h4>
                 <button>Remove all</button>
@@ -38,32 +42,43 @@
                     <span>Total</span>
                     <span>0</span>
                 </div>
-                <button>CheckOut</button>
+                <a href="./checkout.html">
+                    <button>CheckOut</button>
+                </a>
             </div>
         </div>
     </header>
     <main>
-        
         <section class="card-section">
-            <!-- <div class="card">
-                <img src="" alt="">
-                <h2 class="title"></h2>
-                <p class="description"></p>
-                <span class="price"></span>
-                <span class="category"></span>
-                <div class="rating">
-                    <div class="rate-contaianer">
-                    <span class="rate"></span>
-                    <img src="" alt="">
-                    </div>
-                    <span class="count"></span>
-                </div>
-
-                <button>add to cart</button>
-            </div> -->
+          
         </section>
-
     </main>
+
+    <footer>
+        <div class="logo-container">
+            <h1>STORE</h1>
+            <img src="./images/logo.png" alt="logo icon">
+        </div>
+        <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="#">Products</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About us</a></li>
+        </ul>
+        <p>We hope you enjoy our products as much as we enjoy offering them to you. If you have any questions or comments, please don't hesitate to contact us.</p>
+        
+        <div class="socmedia-wrapper">
+            <span>Copyright 2024. All Rights Reserved</span>
+
+            <div class="socmedia">
+               <img src="./images/facebook.svg" alt="facebook icon">
+               <img src="./images/instagram.svg" alt="instagram icon">
+               <img src="./images/twitter.svg" alt="twitter icon">
+            </div>
+        </div>
+
+
+    </footer>
 
 </body>
 </html>

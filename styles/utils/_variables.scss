@@ -1,10 +1,6 @@
 
-// Font Family
+$fontFamily: "Noto Sans Georgian", sans-serif;
 
-$dana-Black-ff: "dana-Black";
-$dana-Bold-ff: "dana-Bold";
-$dana-Medium-ff: "dana-Medium";
-$dana-Regular-ff: "dana-Regular";
 
 // Font Sizes
 
@@ -27,12 +23,14 @@ $regular-w4: 400;
 
 // Colors
 
-$main-bg-color: #F3DCEC;
+$main-bg-color: #FFFFFF;
 $header-bg-color: #101010;
 $nav-bg-color: #9d6d95;
+$checkout-bgc: #fafafa;
 $text-color: #fff;
 $title-text: #0e0909;
 $cart-text-item: #FF0000;
 $button-text:#000;
 $bg-button: #9644e3;
 $bg-btn-check:#d87d4a;
+$footer-text: rgba(255, 255, 255, 0.5);

@@ -33,7 +33,7 @@
             width: 32.7rem;
             display: block;
             position: absolute;
-            top: 100%;
+            top: 110%;
             left: 50%;
             transform: translate(-50%, 0);
             background-color:$nav-bg-color;
@@ -44,64 +44,69 @@
                 @include flex(center, center );
                 flex-direction: column;
                 gap:40px;
-            }
-
+               
                 a{  
-                    @include text_font_style($text-color, $dana-Bold-ff, $link-fs, $Bold-w6);
+                    @include text_font_style($text-color, $fontFamily, 1.8rem, $Bold-w6);
                     white-space: nowrap;
                     cursor: pointer;
                 }
             }
 
+            }
+
             #cart-container{
                 gap: 1rem;
                 position: relative;
+                cursor: pointer;
                 h3{
-                    @include text_font_style($cart-text-item, $dana-Bold-ff, $link-fs, $Bold-w6);
+                    @include text_font_style($cart-text-item, $fontFamily, $link-fs, $Bold-w6);
                     position: absolute;
                     top: -2rem;
                     right: -1rem;
                 }
             }
 
-            #cart-popup{
+            
+            .cart-popup{
                 width: 32.7rem;
                 display: block;
                 position: absolute;
                 top: 110%;
                 left: 50%;
                 transform: translate(-50%, 0);
-                background-color: $main-bg-color;
+                background-color: $text-color;
                 border-radius: 1.5rem;
                 padding: 1.5rem 1rem;
                 border: 2px solid black;
-
+                
                 .popup-header{
                     @include flex(space-between, center);
+                    margin-bottom: 2rem;
                     
                     h4{
-                        @include text_font_style($title-text, $dana-Medium-ff, $popup-title, $medium-w5);
+                        @include text_font_style($title-text, $fontFamily, $popup-title, $medium-w5);
                     }
                     
                     button{
                         background-color: transparent;
                         border: none;
-                        @include text_font_style($button-text, $dana-Medium-ff, $popup-title, $medium-w5);
-
+                        @include text_font_style($button-text, $fontFamily, $popup-title, $medium-w5);
+                        
                     }
                 }
-
+            
+                
                 #cart-item{
                     width: 100%;
                     @include flex(space-between, center);
                     flex-direction: column;
                     gap: 1rem;
-
+                    
                     .card{
                         width: 100%;
                         @include flex(space-between, center);
                     }
-
+                    
                     .card-info{
                         @include flex(space-between, center);
                         gap: 2rem;
@@ -115,13 +120,13 @@
                             flex-direction: column;
                             gap: 1rem;
                             h5{ 
-                               width: 7rem;
-                                @include text_font_style($title-text, $dana-Regular-ff, $cart-fs, $regular-w4);
+                                width: 7rem;
+                                @include text_font_style($title-text, $fontFamily, $cart-fs, $regular-w4);
                                 text-align: left;
                             }
 
                             span{
-                                @include text_font_style($title-text, $dana-Regular-ff, $cart-fs, $regular-w4);
+                                @include text_font_style($title-text, $fontFamily, $cart-fs, $regular-w4);
                             }
                         }
                     }
@@ -131,11 +136,11 @@
                         gap: 1rem;
 
                         span{
-                            @include text_font_style($title-text, $dana-Regular-ff, $cart-fs, $regular-w4);
+                            @include text_font_style($title-text, $fontFamily, $cart-fs, $regular-w4);
                         }
 
                         button{
-                            @include text_font_style($button-text, $dana-Regular-ff, $cart-fs, $regular-w4);
+                            @include text_font_style($button-text, $fontFamily, $cart-fs, $regular-w4);
                             background-color: $bg-button;
                             border: none;
                             padding: 0.7rem 1rem;
@@ -157,17 +162,21 @@
                         @include flex(space-between, center);
 
                         span{
-                            @include text_font_style($title-text, $dana-Bold-ff, $popup-title, $Bold-w6);
+                            @include text_font_style($title-text, $fontFamily, $popup-title, $Bold-w6);
                         }
                     }
 
                     button{
-                        @include text_font_style($title-text, $dana-Medium-ff, $popup-title, $medium-w5);
+                        @include text_font_style($title-text, $fontFamily, $popup-title, $medium-w5);
                         background-color: $bg-btn-check;
                         border: none;
                         padding: 1rem 5.2rem;
                     }
                 }
+            }
+
+            .inactive{
+                display: none;
             }
 }
 
@@ -195,7 +204,7 @@
             gap: 30px;
 
             a{
-                @include text_font_style($text-color, $dana-Medium-ff, 2.5rem ,$medium-w5);
+                @include text_font_style($text-color, $fontFamily, 2rem,$medium-w5);
                 white-space: nowrap;
                 cursor: pointer;
             }
@@ -222,10 +231,10 @@
         ul{
             @include flex(space-between, center);
             flex-direction: row;
-            gap: 40px;
+            gap: 34px;
 
             a{
-                @include text_font_style($text-color, $dana-Bold-ff, 4rem ,$Bold-w6);
+                @include text_font_style($text-color, $fontFamily, 2.5rem ,$Bold-w6);
             }
         }
     
