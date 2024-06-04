@@ -8,71 +8,105 @@
             @include flex(center, center);
             flex-direction: column;
             gap:3rem;
+            
+            .card{
+                width: 350px;
+                border: 2px solid #341818;
+    
+                @include flex(center, center);
+                flex-direction:column;
+                gap: 1rem;
+                padding: 1rem 1.5rem;
+    
+                .img{
+                    width: 327px;
+                }
+    
+                .title{
+                    @include text_font_style($title-text, $fontFamily, 2.5rem ,$Black-w8);
+                    text-align: center;
+                }
+    
+                .description{
+                    @include text_font_style($title-text, $fontFamily, 2rem ,$medium-w5)
+                }
+    
+                .rating{
+                    width: 100%;
+                    padding: 0 2rem;
+                    
+                    @include flex( start, center);
+    
+                        img{
+                            width: 2rem;
+                            padding: 0 0 0.8rem ;
+                            margin-left: 1rem;
+                        }
+                }
+    
+                .price, 
+                .category, 
+                .rate, 
+                .count{
+                    @include text_font_style($title-text, $fontFamily, 1.8rem ,$regular-w4)
+                }
+    
+                .category{
+                    align-self: start;
+                    padding-left: 2rem;
+                }
+            }
         }
 
-        .card{
-            width: 350px;
-            border: 2px solid #341818;
-
-            @include flex(center, center);
-            flex-direction:column;
-            gap: 1rem;
-            padding: 1rem 1.5rem;
-
-            .img{
-                width: 327px;
-            }
-
-            .title{
-                @include text_font_style($title-text, $fontFamily, 2.5rem ,$Black-w8);
-                text-align: center;
-            }
-
-            .description{
-                @include text_font_style($title-text, $fontFamily, 2rem ,$medium-w5)
-            }
-
-            .rating{
-                width: 100%;
-                padding: 0 2rem;
-                
-                @include flex( start, center);
-
-                    img{
-                        width: 2rem;
-                        padding: 0 0 0.8rem ;
-                        margin-left: 1rem;
-                    }
-            }
-
-            .price, 
-            .category, 
-            .rate, 
-            .count{
-                @include text_font_style($title-text, $fontFamily, 1.8rem ,$regular-w4)
-            }
-
-            .category{
-                align-self: start;
-                padding-left: 2rem;
-            }
-        }
     }
 }
 
+
 @include responsive($tablet){
     main{
+        padding: 10rem 0;
 
         .card-section{
             display: grid;
             align-items: normal;
-            grid-template-columns: 350px 350px;
-            gap: 10px;
-        }
+            grid-template-columns: 30rem  30rem ;
+            gap: 1rem;
+            
+            .card{
+                width: 300px;
     
-        .img{
-            width: 300px;
+                .img{
+                    width: 250px;
+                }
+
+            }
         }
+
+    }
+
+}
+
+
+@include responsive($pc){
+    main{
+        padding: 10rem 0;
+
+        .card-section{
+            display: grid;
+            align-items: normal;
+            grid-template-columns: repeat(4, 20rem) ;
+            gap: 2rem;
+            
+            .card{
+                width: 200px;
+    
+                .img{
+                    width: 180px;
+                }
+
+            }
+        }
+
     }
 
 }

@@ -439,7 +439,7 @@ body {
     flex-direction: column;
     gap: 3rem;
   }
-  main .card {
+  main .card-section .card {
     width: 350px;
     border: 2px solid #341818;
     display: flex;
@@ -449,10 +449,10 @@ body {
     gap: 1rem;
     padding: 1rem 1.5rem;
   }
-  main .card .img {
+  main .card-section .card .img {
     width: 327px;
   }
-  main .card .title {
+  main .card-section .card .title {
     color: #0e0909;
     font-family: "Noto Sans Georgian", sans-serif;
     font-size: 2.5rem;
@@ -460,49 +460,72 @@ body {
     line-height: normal;
     text-align: center;
   }
-  main .card .description {
+  main .card-section .card .description {
     color: #0e0909;
     font-family: "Noto Sans Georgian", sans-serif;
     font-size: 2rem;
     font-weight: 500;
     line-height: normal;
   }
-  main .card .rating {
+  main .card-section .card .rating {
     width: 100%;
     padding: 0 2rem;
     display: flex;
     justify-content: start;
     align-items: center;
   }
-  main .card .rating img {
+  main .card-section .card .rating img {
     width: 2rem;
     padding: 0 0 0.8rem;
     margin-left: 1rem;
   }
-  main .card .price,
-  main .card .category,
-  main .card .rate,
-  main .card .count {
+  main .card-section .card .price,
+  main .card-section .card .category,
+  main .card-section .card .rate,
+  main .card-section .card .count {
     color: #0e0909;
     font-family: "Noto Sans Georgian", sans-serif;
     font-size: 1.8rem;
     font-weight: 400;
     line-height: normal;
   }
-  main .card .category {
+  main .card-section .card .category {
     align-self: start;
     padding-left: 2rem;
   }
 }
 @media only screen and (min-width: 768px) {
+  main {
+    padding: 10rem 0;
+  }
   main .card-section {
     display: grid;
     align-items: normal;
-    grid-template-columns: 350px 350px;
-    gap: 10px;
+    grid-template-columns: 30rem 30rem;
+    gap: 1rem;
   }
-  main .img {
+  main .card-section .card {
     width: 300px;
+  }
+  main .card-section .card .img {
+    width: 250px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  main {
+    padding: 10rem 0;
+  }
+  main .card-section {
+    display: grid;
+    align-items: normal;
+    grid-template-columns: repeat(4, 20rem);
+    gap: 2rem;
+  }
+  main .card-section .card {
+    width: 200px;
+  }
+  main .card-section .card .img {
+    width: 180px;
   }
 }
 @media only screen and (min-width: 375px) {
