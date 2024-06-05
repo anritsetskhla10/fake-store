@@ -162,7 +162,7 @@ body {
   flex-direction: column;
 }
 
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 320px) {
   header {
     width: 100%;
     background-color: #101010;
@@ -195,6 +195,7 @@ body {
     position: absolute;
     top: 110%;
     left: 50%;
+    z-index: 4;
     transform: translate(-50%, 0);
     background-color: #9d6d95;
     padding: 8rem 0;
@@ -371,7 +372,7 @@ body {
     display: none;
   }
 }
-@media only screen and (min-width: 375px) and (min-width: 768px) {
+@media only screen and (min-width: 320px) and (min-width: 768px) {
   header {
     padding: 5rem 10rem;
   }
@@ -402,7 +403,7 @@ body {
     cursor: pointer;
   }
 }
-@media only screen and (min-width: 375px) and (min-width: 1200px) {
+@media only screen and (min-width: 320px) and (min-width: 1200px) {
   header {
     padding: 6rem 15rem;
   }
@@ -428,7 +429,7 @@ body {
     line-height: normal;
   }
 }
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 320px) {
   main {
     padding: 10rem 0;
   }
@@ -440,19 +441,28 @@ body {
     gap: 3rem;
   }
   main .card-section .card {
-    width: 350px;
+    width: 280px;
     border: 2px solid #341818;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     flex-direction: column;
     gap: 1rem;
     padding: 1rem 1.5rem;
   }
-  main .card-section .card .img {
-    width: 327px;
+  main .card-section .card .imgContainer {
+    width: 250px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
   }
-  main .card-section .card .title {
+  main .card-section .card .imgContainer .img {
+    width: 250px;
+  }
+  main .card-section .card .imgContainer .title {
     color: #0e0909;
     font-family: "Noto Sans Georgian", sans-serif;
     font-size: 2.5rem;
@@ -469,14 +479,12 @@ body {
   }
   main .card-section .card .rating {
     width: 100%;
-    padding: 0 2rem;
     display: flex;
     justify-content: start;
     align-items: center;
   }
   main .card-section .card .rating img {
     width: 2rem;
-    padding: 0 0 0.8rem;
     margin-left: 1rem;
   }
   main .card-section .card .price,
@@ -489,9 +497,41 @@ body {
     font-weight: 400;
     line-height: normal;
   }
+  main .card-section .card .price,
   main .card-section .card .category {
     align-self: start;
-    padding-left: 2rem;
+  }
+  main .card-section .card .buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  main .card-section .card .buttons .addBtn {
+    padding: 0.5rem 2.5rem;
+    border-radius: 0.4rem;
+    background-color: #d87d4a;
+    border: none;
+    color: #fff;
+    font-family: "Noto Sans Georgian", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+    align-self: center;
+    cursor: pointer;
+  }
+  main .card-section .card .buttons .seeBtn {
+    padding: 0.5rem 2.5rem;
+    background-color: #9644e3;
+    border-radius: 0.4rem;
+    border: none;
+    color: #fff;
+    font-family: "Noto Sans Georgian", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+    align-self: center;
+    cursor: pointer;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -501,13 +541,16 @@ body {
   main .card-section {
     display: grid;
     align-items: normal;
-    grid-template-columns: 30rem 30rem;
+    grid-template-columns: 32rem 32rem;
     gap: 1rem;
   }
   main .card-section .card {
+    width: 320px;
+  }
+  main .card-section .card .imgContainer {
     width: 300px;
   }
-  main .card-section .card .img {
+  main .card-section .card .imgContainer .img {
     width: 250px;
   }
 }
@@ -518,17 +561,20 @@ body {
   main .card-section {
     display: grid;
     align-items: normal;
-    grid-template-columns: repeat(4, 20rem);
+    grid-template-columns: repeat(4, 28rem);
     gap: 2rem;
   }
   main .card-section .card {
-    width: 200px;
+    width: 280px;
   }
-  main .card-section .card .img {
-    width: 180px;
+  main .card-section .card .imgContainer {
+    width: 280px;
+  }
+  main .card-section .card .imgContainer .img {
+    width: 250px;
   }
 }
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 320px) {
   footer {
     width: 100%;
     background-color: #101010;
@@ -714,19 +760,19 @@ body {
     height: 2.4rem;
   }
 }
-@media only screen and (min-width: 375px) {
+@media only screen and (min-width: 320px) {
   .checkout-summary {
-    width: 32.7rem;
-    margin: 3rem 0;
+    width: 100%;
     padding: 3rem 2.4rem;
     background-color: #FFFFFF;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     flex-direction: column;
+    position: relative;
   }
   .checkout-summary .summary {
-    width: 100%;
+    width: 27.9rem;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -883,6 +929,7 @@ body {
     width: 27.9rem;
     background-color: #fafafa;
     padding: 3.2rem 2.4rem;
+    margin-top: 3rem;
   }
   .checkout-summary .checkout-section form {
     display: flex;
@@ -912,6 +959,7 @@ body {
     flex-direction: column;
     gap: 1rem;
   }
+  .checkout-summary .checkout-section form div h5,
   .checkout-summary .checkout-section form div label {
     color: #0e0909;
     font-family: "Noto Sans Georgian", sans-serif;
@@ -980,10 +1028,91 @@ body {
     border-radius: 50%;
     background: #d87d4a;
   }
+  .checkout-summary .thanks {
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2rem;
+    border-radius: 8px;
+    background-color: #fff;
+    padding: 3.2rem;
+    position: absolute;
+    top: 3rem;
+    z-index: 5;
+    display: none;
+  }
+  .checkout-summary .thanks .imgBox {
+    background-color: #d87d4a;
+    padding: 2.2rem 2rem;
+    border-radius: 50%;
+  }
+  .checkout-summary .thanks .imgBox img {
+    width: 23px;
+    height: 16px;
+  }
+  .checkout-summary .thanks h2 {
+    color: #0e0909;
+    font-family: "Noto Sans Georgian", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 600;
+    line-height: normal;
+  }
+  .checkout-summary .thanks p {
+    color: #0e0909;
+    font-family: "Noto Sans Georgian", sans-serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    line-height: normal;
+    opacity: 0.5;
+  }
+  .checkout-summary .thanks .grand-total {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .checkout-summary .thanks .grand-total span {
+    color: #0e0909;
+    font-family: "Noto Sans Georgian", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .checkout-summary .thanks #timer {
+    color: #0e0909;
+    font-family: "Noto Sans Georgian", sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    line-height: normal;
+  }
+  .checkout-summary .thanks button {
+    padding: 1.5rem 5.5rem;
+    background-color: #d87d4a;
+    border: none;
+    color: #fff;
+    font-family: "Noto Sans Georgian", sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: normal;
+    align-self: center;
+    cursor: pointer;
+  }
+  .checkout-summary .blur {
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.4;
+    background-color: #000;
+    z-index: 3;
+  }
 }
 @media only screen and (min-width: 768px) {
   .checkout-summary {
-    width: 68.9rem;
     padding: 9rem 4rem;
   }
   .checkout-summary .checkout-section {
@@ -1013,6 +1142,13 @@ body {
     grid-template-columns: 1fr 1fr;
     margin-bottom: 3rem;
   }
+  .checkout-summary .checkout-section form .pay-details {
+    grid-area: 7/1/7/3;
+    margin-bottom: 2rem;
+  }
+  .checkout-summary .checkout-section form .payment-container {
+    grid-area: 8/1/8/3;
+  }
   .checkout-summary .checkout-section form .address-input {
     grid-area: 1/1/1/3;
   }
@@ -1025,8 +1161,6 @@ body {
 }
 @media only screen and (min-width: 1200px) {
   .checkout-summary {
-    width: 100%;
-    margin: 3rem 0;
     padding: 8rem 10rem;
     flex-direction: row;
     gap: 4rem;
@@ -1039,9 +1173,9 @@ body {
     width: 73rem;
   }
   .checkout-summary .checkout-section form .address-input input[type=text] {
-    width: 63.4rem;
+    width: 58rem;
   }
   .checkout-summary .checkout-section form div input[type=text] {
-    width: 29.7rem;
+    width: 28.5rem;
   }
 }/*# sourceMappingURL=global.css.map */

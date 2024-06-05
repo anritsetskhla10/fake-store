@@ -35,6 +35,7 @@
             position: absolute;
             top: 110%;
             left: 50%;
+            z-index: 4;
             transform: translate(-50%, 0);
             background-color:$nav-bg-color;
             padding: 8rem 0;

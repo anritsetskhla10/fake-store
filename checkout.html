@@ -15,7 +15,7 @@
     <header>
         <img id="menu" src="./images/burger-menu-svgrepo-com.svg" alt="menu icon">
         <img class="logo" src="./images/logo.png" alt="logo icon">
-        <nav >
+        <nav>
             <ul>
                 <li><a href="./index.html">Home</a></li>
                 <li><a href="#">Products</a></li>
@@ -30,44 +30,44 @@
     </header>
     <div class="checkout-summary">
         <section class="checkout-section">
-            <form action="">
+            <form  id="checkoutForm" >
                 <h2 class="checkout-title">CHECKOUT</h2>
                 <span class="billing">Billing details</span>
                 <div>
-                    <label for="">name</label>
-                    <input type="text" placeholder="name">
+                    <label for="name">name</label>
+                    <input type="text" placeholder="name" id="name" autocomplete="given-name">
                 </div>
                 <div>
-                    <label for="">Email</label>
-                    <input type="text" placeholder="email">
+                    <label for="email">Email</label>
+                    <input type="text" placeholder="email" id="email" autocomplete="off" >
                 </div>
                 <div>
-                    <label for="">Phone number</label>
-                    <input type="text" placeholder="phone number">
+                    <label for="phone">Phone number</label>
+                    <input type="text" placeholder="phone number" id="phone" autocomplete="off">
                 </div>
                 <span class="shipping">shipping info</span>
                 <div class="address">
                     <div class="address-input">
-                        <label for="">Your Address</label>
-                        <input type="text" placeholder="Your Address">
+                        <label for="address">Your Address</label>
+                        <input type="text" placeholder="Your Address" id="address" autocomplete="off">
                     </div>
                     <div>
-                        <label for="">ZIP Code</label>
-                        <input type="text" placeholder="zip code">
+                        <label for="zip">ZIP Code</label>
+                        <input type="text" placeholder="zip code" id="zip" autocomplete="off">
                     </div>
                     <div class="city">
-                        <label for="">City</label>
-                        <input type="text" placeholder="City">
+                        <label for="city">City</label>
+                        <input type="text" placeholder="City" id="city" autocomplete="off">
                     </div>
                     <div>
-                        <label for="">Country</label>
-                        <input type="text" placeholder="Country">
+                        <label for="country">Country</label>
+                        <input type="text" placeholder="Country" id="country" autocomplete="off">
                     </div>
                 </div>
     
-                <span>payment details</span>
-                <div >
-                    <label for="">Payment Method</label>
+                <span class="pay-details">payment details</span>
+                <div class="payment-container">
+                    <h5 >Payment Method</h5>
                     <div class="checkboxes">
                         <label class="container">e-Money
                             <input type="radio" checked="checked" name="radio">
@@ -100,12 +100,23 @@
                 <span >GRAND TOTAL</span>
                 <p id="grand">$ 0</p>
             </div>
-            <button>CONTINUE & PAY</button>
+            <button id="pay">CONTINUE & PAY</button>
         </section>
 
-        <div class="">
-
+        <div class="thanks">
+            <div class="imgBox">
+                <img src="./images/done.svg" alt="done icon">
+            </div>
+            <h2>THANK YOU FOR YOUR ORDER</h2>
+            <p>You will receive an email confirmation shortly.</p>
+           <div class="grand-total">
+               <span>GRAND TOTAL</span>
+               <span class="grandPrice"></span>
+            </div> 
+            <span id="timer"></span>
+            <button class="backHome">BACK TO HOME</button>
         </div>
+        <div class="blur"></div>
     </div>
 
     <footer>

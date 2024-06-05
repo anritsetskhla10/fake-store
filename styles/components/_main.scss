@@ -10,22 +10,30 @@
             gap:3rem;
             
             .card{
-                width: 350px;
+                width: 280px;
                 border: 2px solid #341818;
     
-                @include flex(center, center);
+                @include flex(flex-end, center);
                 flex-direction:column;
                 gap: 1rem;
                 padding: 1rem 1.5rem;
-    
-                .img{
-                    width: 327px;
+                
+                .imgContainer{
+                    width: 250px;
+                    height: 100%;
+                    @include flex(center, center);
+                    flex-direction: column;
+                    gap: 1rem;
+                    .img{
+                        width: 250px;
+                    }
+
+                    .title{
+                        @include text_font_style($title-text, $fontFamily, 2.5rem ,$Black-w8);
+                        text-align: center;
+                    }
                 }
     
-                .title{
-                    @include text_font_style($title-text, $fontFamily, 2.5rem ,$Black-w8);
-                    text-align: center;
-                }
     
                 .description{
                     @include text_font_style($title-text, $fontFamily, 2rem ,$medium-w5)
@@ -33,13 +41,11 @@
     
                 .rating{
                     width: 100%;
-                    padding: 0 2rem;
                     
                     @include flex( start, center);
     
                         img{
                             width: 2rem;
-                            padding: 0 0 0.8rem ;
                             margin-left: 1rem;
                         }
                 }
@@ -50,10 +56,35 @@
                 .count{
                     @include text_font_style($title-text, $fontFamily, 1.8rem ,$regular-w4)
                 }
-    
+
+                .price,
                 .category{
                     align-self: start;
-                    padding-left: 2rem;
+                }
+
+                .buttons{
+                    width: 100%;
+                    @include flex( space-between ,center);
+
+                    .addBtn{
+                        padding: 0.5rem 2.5rem;
+                        border-radius: 0.4rem;
+                        background-color: $bg-btn-check;
+                        border: none;
+                        @include text_font_style($text-color, $fontFamily, $cart-fs, $regular-w4);
+                        align-self: center;
+                        cursor: pointer;
+                    }
+
+                    .seeBtn{
+                        padding: 0.5rem 2.5rem;
+                        background-color: $bg-button;
+                        border-radius: 0.4rem;
+                        border: none;
+                        @include text_font_style($text-color, $fontFamily, $cart-fs, $regular-w4);
+                        align-self: center;
+                        cursor: pointer;
+                    }
                 }
             }
         }
@@ -69,14 +100,18 @@
         .card-section{
             display: grid;
             align-items: normal;
-            grid-template-columns: 30rem  30rem ;
+            grid-template-columns: 32rem  32rem ;
             gap: 1rem;
             
             .card{
-                width: 300px;
+                width: 320px;
     
-                .img{
-                    width: 250px;
+                .imgContainer{
+                    width: 300px;
+                    .img{
+                        width: 250px;
+                    }
+
                 }
 
             }
@@ -94,14 +129,18 @@
         .card-section{
             display: grid;
             align-items: normal;
-            grid-template-columns: repeat(4, 20rem) ;
+            grid-template-columns: repeat(4, 28rem) ;
             gap: 2rem;
             
             .card{
-                width: 200px;
+                width: 280px;
     
-                .img{
-                    width: 180px;
+                .imgContainer{
+                    width: 280px;
+                    .img{
+                        width: 250px;
+                    }
+
                 }
 
             }

@@ -11,6 +11,7 @@ menu.addEventListener('click', () => {
   }
 });
 
+
 // Cart popup
 const cartContainer = document.getElementById('cart-container');
 const cartPopUp = document.querySelector('.cart-popup');
@@ -103,6 +104,7 @@ export const updateCart = () => {
   const totalQuantity = cart.reduce((accumulator, item) => accumulator + item.quantity, 0);
   cardCount.textContent = totalQuantity;
   popupCount.textContent = `Cart (${totalQuantity})`;
+  priceCounter();
 };
 
 // Remove item from cart
@@ -114,10 +116,32 @@ const removeFromCart = (index) => {
   }
   saveCartToLocalStorage();
   updateCart();
+  
 };
+
+const removeAll = document.querySelector('.removeAll');
+
+removeAll.addEventListener('click' , () =>{
+  cart = [];
+  saveCartToLocalStorage();
+  updateCart();
+})
 
 loadCartFromLocalStorage();
 updateCart();
+
+//price counter
+
+function priceCounter(){
+
+  const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
+
+  const totalPrice = document.getElementById('total');
+  totalPrice.textContent = `$${subtotal.toFixed(2)}`
+
+ }
+
+
 
 // Fetch and display product data
 const getdata = async () => {
@@ -132,6 +156,9 @@ const getdata = async () => {
     data.forEach((item) => {
       const card = document.createElement('div');
       card.classList.add('card');
+
+      const imgContainer = document.createElement('div');
+      imgContainer.classList.add('imgContainer');
 
       const image = document.createElement('img');
       image.classList.add('img');
@@ -163,16 +190,18 @@ const getdata = async () => {
       buttons.classList.add('buttons');
 
       const seeButton = document.createElement('button');
+      seeButton.classList.add('seeBtn');
       seeButton.textContent = 'See Product';
 
       const addButton = document.createElement('button');
+      addButton.classList.add('addBtn');
       addButton.textContent = 'Add to cart';
       addButton.addEventListener('click', () => addToCart(item));
 
       buttons.append(seeButton, addButton);
-
+      imgContainer.append(image, title);
       rating.append(rate, starImg);
-      card.append(image, title, category, rating, price, buttons);
+      card.append(imgContainer, category, rating, price, buttons);
 
       cardContainer.appendChild(card);
     });

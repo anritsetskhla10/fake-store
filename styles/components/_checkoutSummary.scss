@@ -1,15 +1,15 @@
 
 @include responsive($phone){
     .checkout-summary{
-        width: 32.7rem;
-        margin: 3rem 0;
+        width: 100%;
         padding: 3rem 2.4rem;
         background-color: $main-bg-color;
-        @include flex(center, flex-start);
+        @include flex(center, center);
         flex-direction: column;
+        position: relative;
 
         .summary{
-            width: 100%;
+            width: 27.9rem;
             @include flex(center, flex-start);
             flex-direction: column;
             padding: 3.2rem 2.4rem;
@@ -126,6 +126,7 @@
              width: 27.9rem;
              background-color: $checkout-bgc;
              padding: 3.2rem 2.4rem;
+             margin-top: 3rem;
  
              form{
                  @include flex(normal, flex-start);
@@ -144,7 +145,8 @@
                      @include flex(normal, flex-start);
                      flex-direction: column;
                      gap: 1rem;
- 
+                    
+                     h5,
                      label{
                          @include text_font_style($title-text, $fontFamily, 1.2rem, $regular-w4);
                          letter-spacing: -0.21px; 
@@ -215,12 +217,76 @@
                  }
                  
          }
+
+         .thanks{
+             width: 300px;
+             @include flex(center, flex-start);
+             flex-direction: column;
+             gap: 2rem;
+             border-radius: 8px;
+             background-color: $text-color;
+             padding: 3.2rem;
+             position: absolute;
+             top: 3rem;
+             z-index: 5;
+             display: none;
+            
+            .imgBox{
+                background-color:$bg-btn-check ;
+                padding: 2.2rem 2rem;
+                border-radius: 50%;
+                img{
+                    width: 23px;
+                    height: 16px;
+                }
+            }
+
+            h2{
+                @include text_font_style($title-text, $fontFamily, $popup-title, $Bold-w6);
+            }
+
+            p{
+                @include text_font_style($title-text, $fontFamily, 1.3rem, $regular-w4);
+                opacity: 0.5;
+            }
+            .grand-total{
+                width: 100%;
+                    @include flex(space-between, center);
+                span{
+                    @include text_font_style($title-text, $fontFamily, 1.6rem, $medium-w5);
+                }
+            }
+
+            #timer{
+                @include text_font_style($title-text, $fontFamily, 1.6rem, $medium-w5);
+            }
+
+            button{
+                padding: 1.5rem 5.5rem;
+                background-color: $bg-btn-check;
+                border: none;
+                @include text_font_style($text-color, $fontFamily, $cart-fs, $regular-w4);
+                align-self: center;
+                cursor: pointer;
+            }
+         }
+
+         .blur{
+            display: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.4;
+            background-color: #000;
+            z-index: 3;
+         }
     }
 } 
 
 @include responsive($tablet){
     .checkout-summary{
-        width: 68.9rem;
         padding: 9rem 4rem;
 
         .checkout-section{
@@ -254,6 +320,15 @@
                     margin-bottom: 3rem;
                 }
 
+                .pay-details{
+                    grid-area: 7/1/7/3;
+                    margin-bottom: 2rem;
+                }
+
+                .payment-container{
+                    grid-area: 8/1/8/3;
+                }
+
                 .address-input{
                     grid-area: 1/1/1/3;
                     input[type="text"]{
@@ -274,8 +349,6 @@
 
 @include responsive($pc){
     .checkout-summary{
-        width: 100%;
-        margin: 3rem 0;
         padding: 8rem 10rem;
         flex-direction: row;
         gap: 4rem;
@@ -293,13 +366,13 @@
   
                 .address-input{
                     input[type="text"]{
-                        width: 63.4rem;
+                        width: 58rem;
                     }
                 }
 
                 div{
                     input[type="text"]{
-                        width: 29.7rem;
+                        width: 28.5rem;
                     }
                 }
                 

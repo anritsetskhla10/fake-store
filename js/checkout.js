@@ -1,4 +1,18 @@
 
+// Menu functionality
+const menu = document.getElementById('menu');
+const nav = document.querySelector('nav');
+
+menu.addEventListener('click', () => {
+  if (!nav.classList.contains('navActive') ) {
+    nav.classList.add('navActive');
+  } else {
+    nav.classList.remove('navActive');
+  }
+});
+
+
+
 const loadCartFromLocalStorage = () => {
     const storedCart = localStorage.getItem('cart');
     if (storedCart) {
@@ -10,7 +24,6 @@ const loadCartFromLocalStorage = () => {
 
   const cart = loadCartFromLocalStorage();
   
-  console.log(cart)
 
 // Function to save cart to localStorage
 const saveCartToLocalStorage = () => {
@@ -84,7 +97,6 @@ const saveCartToLocalStorage = () => {
   // price counter 
 
  function priceCounter(){
-  const priceContainer = document.querySelector('.price-container');
 
   const subtotal = cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
 
@@ -98,6 +110,10 @@ const saveCartToLocalStorage = () => {
   const grandTotal = subtotal + shippingCost;
   const grandToTalPrice = document.getElementById('grand');
   grandToTalPrice.textContent = `$${grandTotal.toFixed(2)}`;
+
+  const grandTotalPrice2 = document.querySelector('.grandPrice');
+  grandTotalPrice2.textContent = `$${grandTotal.toFixed(2)}`;
+
  }
 
 
@@ -115,3 +131,59 @@ const saveCartToLocalStorage = () => {
   loadCartFromLocalStorage();
   updateCart();
 
+
+
+  // validate if all input is filled and open thanks popup
+
+  const form = document.getElementById('checkoutForm');
+  const thanks = document.querySelector('.thanks');
+  const blur = document.querySelector('.blur');
+  const backHome = document.querySelector('.backHome');
+  const payBtn = document.getElementById('pay');
+  const timer = document.getElementById('timer');
+
+  payBtn.addEventListener('click', function(event) {
+      event.preventDefault();
+      let allFilled = true;
+
+      const inputs = form.querySelectorAll('input[type="text"], input[type="radio"]:checked');
+      inputs.forEach(input => {
+          if (!input.value) {
+              allFilled = false;
+          }
+      });
+
+      if (allFilled) {
+          thanks.style.display = 'flex';
+          blur.style.display = 'block';
+          startCountdown(15);
+      } else {
+          alert('Please fill all fields');
+      }
+  });
+
+  backHome.addEventListener('click', closePopup);
+  payBtn.addEventListener('click', () => {
+      setTimeout(closePopup, 15000);
+
+  });
+
+  function startCountdown(seconds) {
+    let remainingTime = seconds;
+    timer.textContent = `Redirecting in ${remainingTime} seconds...`;
+    let countdownInterval = setInterval(() => {
+        remainingTime -= 1;
+        timer.textContent = `Redirecting in ${remainingTime} seconds...`;
+        if (remainingTime <= 0) {
+            clearInterval(countdownInterval);
+            closePopup();
+        }
+    }, 1000);
+}
+
+  function closePopup() {
+      thanks.style.display = 'none';
+      blur.style.display = 'none';
+      window.location.href = 'index.html';
+      localStorage.clear();
+  }
